@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Um pedido especial 💕</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      color: #333;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 40px 20px;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+      position: relative;
+      z-index: 2;
+    }
+
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .gallery img {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.02);
+    }
+
+    .moments {
+      padding: 30px 20px;
+      background: rgba(255,255,255,0.7);
+      border-radius: 12px;
+      margin: 30px auto;
+      max-width: 600px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .moments p {
+      font-size: 1.2rem;
+      margin: 15px 0;
+    }
+
+    .final {
+      padding: 40px 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .final h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .btns button {
+      padding: 15px 35px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background: #ff5e78;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .btns button:hover {
+      background: #ff2e4d;
+      transform: scale(1.1);
+    }
+
+    footer {
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #fff;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Modal (janela com imagem) */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 99;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 12px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.5);
+    }
+
+    .modal:target {
+      display: flex;
+    }
+
+    /* Corações flutuando */
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -20px;
+      color: rgba(255, 0, 90, 0.6);
+      font-size: 20px;
+      animation: floatUp 6s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts" id="hearts"></div>
+
+  <header>
+    Uma historinha nossa 💖
+  </header>
+
+  <section class="gallery">
+    <img src="foto1.jpg" alt="Foto 1">
+    <img src="foto2.jpg" alt="Foto 2">
+    <img src="foto3.jpg" alt="Foto 3">
+  </section>
+
+  <section class="moments">
+  <h2>✨ 200 motivos pra te amar & 1 pra eu ir embora:</h2>
+
+  <ol>
+    <li>Seu sorriso</li>
+    <li>Seus olhos</li>
+    <li>Seus cabelos</li>
+    <li>Seu jeito</li>
+    <li>Seu coração</li>
+    <li>Seu toque</li>
+    <li>Sua presença</li>
+    <li>Sua voz</li>
+    <li>Sua lealdade</li>
+    <li>Seu brilho</li>
+    <li>Sua calma</li>
+    <li>Sua gentileza</li>
+    <li>Seu amor</li>
+    <li>Seu foco</li>
+    <li>Seu otimismo</li>
+    <li>Sua resiliência</li>
+    <li>Sua ternura</li>
+    <li>Sua compaixão</li>
+    <li>Sua bondade</li>
+    <li>Sua força</li>
+    <li>Seu carinho</li>
+    <li>Seu encanto</li>
+    <li>Seu estilo</li>
+    <li>Sua energia</li>
+    <li>Seu sorriso</li>
+    <li>Sua luz</li>
+    <li>Sua coragem</li>
+    <li>Seu humor</li>
+    <li>Seu jeito</li>
+    <li>Sua alma</li>
+    <li>Seu brilho</li>
+    <li>Sua graça</li>
+    <li>Sua sensibilidade</li>
+    <li>Sua sinceridade</li>
+    <li>Seu afeto</li>
+    <li>Sua honestidade</li>
+    <li>Seu apoio</li>
+    <li>Sua dedicação</li>
+    <li>Sua paciência</li>
+    <li>Seu amor</li>
+    <li>Seu cuidado</li>
+    <li>Seu calor</li>
+    <li>Sua suavidade</li>
+    <li>Seu charme</li>
+    <li>Sua imaginação</li>
+    <li>Sua sinceridade</li>
+    <li>Sua lealdade</li>
+    <li>Seu espírito</li>
+    <li>Sua felicidade</li>
+    <li>Sua inteligência</li>
+    <li>Sua generosidade</li>
+    <li>Seu entendimento</li>
+    <li>Sua serenidade</li>
+    <li>Sua perseverança</li>
+    <li>Seu ritmo</li>
+    <li>Sua doçura</li>
+    <li>Sua confiança</li>
+    <li>Sua paz</li>
+    <li>Seu olhar</li>
+    <li>Seu abraço</li>
+    <li>Seu vínculo</li>
+    <li>Seu carinho</li>
+    <li>Sua liberdade</li>
+    <li>Sua fé</li>
+    <li>Sua compreensão</li>
+    <li>Sua tranquilidade</li>
+    <li>Seu equilíbrio</li>
+    <li>Sua vitalidade</li>
+    <li>Sua empatia</li>
+    <li>Sua alegria</li>
+    <li>Sua inteligência</li>
+    <li>Sua esperança</li>
+    <li>Seu aconchego</li>
+    <li>Sua suavidade</li>
+    <li>Sua generosidade</li>
+    <li>Seu altruísmo</li>
+    <li>Seu apoio</li>
+    <li>Sua bondade</li>
+    <li>Seu coração</li>
+    <li>Sua sinceridade</li>
+    <li>Seu humor</li>
+    <li>Sua criatividade</li>
+    <li>Sua empatia</li>
+    <li>Sua espontaneidade</li>
+    <li>Seu olhar</li>
+    <li>Sua autenticidade</li>
+    <li>Sua harmonia</li>
+    <li>Sua honestidade</li>
+    <li>Seu entusiasmo</li>
+    <li>Sua determinação</li>
+    <li>Sua tranquilidade</li>
+    <li>Sua independência</li>
+    <li>Sua risada</li>
+    <li>Sua preocupação</li>
+    <li>Sua alegria</li>
+    <li>Sua positividade</li>
+    <li>Sua amizade</li>
+    <li>Sua proteção</li>
+    <li>Sua admiração</li>
+    <li>Sua visão</li>
+    <li>Seu otimismo</li>
+    <li>Seu respeito</li>
+    <li>Sua beleza</li>
+    <li>Sua espontaneidade</li>
+    <li>Seu consolo</li>
+    <li>Sua ternura</li>
+    <li>Sua humildade</li>
+    <li>Seu espírito</li>
+    <li>Seu vigor</li>
+    <li>Seu respeito</li>
+    <li>Sua sinceridade</li>
+    <li>Sua calma</li>
+    <li>Sua gratidão</li>
+    <li>Seu cuidado</li>
+    <li>Sua generosidade</li>
+    <li>Sua energia</li>
+    <li>Seu encantamento</li>
+    <li>Sua perspicácia</li>
+    <li>Sua empatia</li>
+    <li>Sua gratidão</li>
+    <li>Seu entusiasmo</li>
+    <li>Sua suavidade</li>
+    <li>Seu acolhimento</li>
+    <li>Sua confiança</li>
+    <li>Sua dedicação</li>
+    <li>Sua inteligência</li>
+    <li>Sua coragem</li>
+    <li>Sua paz</li>
+    <li>Sua fortaleza</li>
+    <li>Seu zelo</li>
+    <li>Sua ternura</li>
+    <li>Sua paciência</li>
+    <li>Sua entrega</li>
+    <li>Sua compaixão</li>
+    <li>Sua presença</li>
+    <li>Seu foco</li>
+    <li>Sua resiliência</li>
+    <li>Sua sensatez</li>
+    <li>Seu amor</li>
+    <li>Sua amizade</li>
+    <li>Sua força</li>
+    <li>Sua gentileza</li>
+    <li>Sua paixão</li>
+    <li>Seu charme</li>
+    <li>Sua serenidade</li>
+    <li>Sua positividade</li>
+    <li>Seu apoio</li>
+    <li>Sua estabilidade</li>
+    <li>Seu apoio</li>
+    <li>Seu calor</li>
+    <li>Sua atenção</li>
+    <li>Sua serenidade</li>
+    <li>Sua leveza</li>
+    <li>Sua alegria</li>
+    <li>Seu orgulho</li>
+    <li>Sua persistência</li>
+    <li>Seu carinho</li>
+    <li>Sua sabedoria</li>
+    <li>Seu espírito</li>
+    <li>Sua confiança</li>
+    <li>Sua autenticidade</li>
+    <li>Sua tranquilidade</li>
+    <li>Seu amor</li>
+    <li>Sua sinceridade</li>
+    <li>Seu encanto</li>
+    <li>Sua tenacidade</li>
+    <li>Sua adaptação</li>
+    <li>Sua verdade</li>
+    <li>Seu alicerce</li>
+    <li>Sua beleza</li>
+    <li>Seu alívio</li>
+    <li>Seu afeto</li>
+    <li>Sua bondade</li>
+    <li>Seu magnetismo</li>
+    <li>Sua visão</li>
+    <li>Sua sabedoria</li>
+    <li>Seu humor</li>
+    <li>Sua calma</li>
+    <li>Sua criatividade</li>
+    <li>Seu olhar</li>
+    <li>Sua resiliência</li>
+    <li>Sua alegria</li>
+    <li>Seu empenho</li>
+    <li>Sua suavidade</li>
+    <li>Sua sinceridade</li>
+    <li>Seu brilho</li>
+    <li>Sua fé</li>
+    <li>Sua força</li>
+    <li>Seu apoio</li>
+    <li>Sua espiritualidade</li>
+    <li>Sua confiança</li>
+    <li>Sua dedicação</li>
+    <li>Seu afeto</li>
+    <li>Sua felicidade</li>
+    <li>Sua energia</li>
+    <li>Sua habilidade</li>
+    <li>Sua generosidade</li>
+    <li>Sua sabedoria</li>
+    <li>Seu zelo</li>
+    <li>Sua luz</li>
+  </ol>
+
+  <h3>1 Motivo:</h3>
+  <p>Tá procurando o que senhora, tem motivos para eu ir embora não, é nos dois para sempre minha linda ❤️</p>
+</section>
+
+
+  <section class="final">
+    <h2>💖 E ai senhora? 💖</h2>
+    <div class="btns">
+      <a href="#popup"><button>APERTE AQUI</button></a>
+    </div>
+  </section>
+
+  <footer>
+    Feito com amor por você 💕
+  </footer>
+
+  <!-- Modal com imagem -->
+  <div id="popup" class="modal">
+    <a href="#"><img src="pedido.jpg" alt="Pedido de namoro"></a>
+  </div>
+
+  <script>
+    // Gerar coraçõezinhos aleatórios
+    const heartsContainer = document.getElementById('hearts');
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.textContent = '❤';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+      heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+      heartsContainer.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 7000);
+    }
+
+    setInterval(createHeart, 500);
+  </script>
+</body>
+</html>
