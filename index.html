@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+f<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -385,8 +385,14 @@
   </footer>
 
   <!-- Modal com imagem -->
-  <div id="popup" class="modal">
-    <a href="#"><img src="pedido.jpg" alt="Pedido de namoro"></a>
+   <div id="pedidoModal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-label="Pedido">
+      <button class="close-btn" id="closeBtn">FECHAR ✕</button>
+      <!-- imagem do pedido (troque "pedido.jpg" pela sua imagem) -->
+      <img src="pedido.jpg" alt="Pedido de namoro">
+      <!-- texto sobre a imagem -->
+      <div class="banner">Olhe no PORTA-LUVAS</div>
+    </div>
   </div>
 
   <script>
@@ -409,3 +415,4 @@
   </script>
 </body>
 </html>
+
