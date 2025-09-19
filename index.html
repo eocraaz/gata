@@ -412,7 +412,37 @@ f<!DOCTYPE html>
     }
 
     setInterval(createHeart, 500);
+
+    const openBtn = document.getElementById('openBtn');
+    const modal = document.getElementById('pedidoModal');
+    const closeBtn = document.getElementById('closeBtn');
+
+    openBtn.addEventListener('click', () => {
+      modal.classList.add('show');
+      modal.setAttribute('aria-hidden', 'false');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('show');
+      modal.setAttribute('aria-hidden', 'true');
+    });
+
+    // fechar clicando fora do conteúdo
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('show');
+        modal.setAttribute('aria-hidden', 'true');
+      }
+    });
+
+    // fechar com ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('show')) {
+        modal.classList.remove('show');
+        modal.setAttribute('aria-hidden', 'true');
+      }
   </script>
 </body>
 </html>
+
 
